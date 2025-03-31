@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Game Store</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1a1a2e;
+            color: #ffffff;
+        }
+
+        .header {
+            background-color: #0f3460;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #00a8ff;
+        }
+
+        .search-bar {
+            margin: 20px auto;
+            max-width: 600px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .games-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .game-card {
+            background-color: #16213e;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: none; /* Hide by default (filtered by search) */
+        }
+
+        .game-card img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+        }
+
+        .game-card h2 {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        .game-card p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+            color: #dcdde1;
+        }
+
+        .game-card .rating {
+            color: #fbc531;
+            font-weight: bold;
+        }
+
+        .game-card .downloads {
+            color: #00a8ff;
+        }
+
+        .game-card button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #ffffff;
+            background-color: #00a8ff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .game-card button:hover {
+            background-color: #005f99;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+      
+        <h1>Global Game Store</h1>
+    </div>
+
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search for games..." onkeyup="filterGames()">
+    </div>
+
+    <div class="games-container" id="gamesContainer">
+        <!-- Adding 12 games -->
+        <div class="game-card" data-name="Game 1">
+            <img src="image1.jpg" alt="game">
+            <h2>Jetpack Joyride</h2>
+            <p>Barry Steakfries est l'un des personnages préférés des jeux Android. Rejoignez-le et contrôlez le jetpack dans son jeu de course sans fin Jetpack Joyride
+
+            </p>
+            <p>Rating: <span class="rating">4.5 ★</span></p>
+            <p>Downloads: <span class="downloads">1.2M</span></p>
+            <button onclick="window.location.href='https://unlockcontent.net/fl/qldp6
+'">Download</button>
+        </div>
+
+        <div class="game-card" data-name="Game 2">
+            <img src="image2.jpeg" alt="game">
+            <h2>T3 Arena</h2>
+            <p> Mettez votre visée et vos réflexes à l'épreuve sur T3 Arena, un jeu de tir multijoueur amusant avec des combats 3c3 vaguement semblable au mythique Splatoon
+
+            </p>
+            <p>Rating: <span class="rating">4.3 ★</span></p>
+            <p>Downloads: <span class="downloads">980K</span></p>
+            <button onclick="window.location.href='https://installchecker.com/fl/vqkpk
+'">Download</button>
+        </div>
+
+        <div class="game-card" data-name="Game 3">
+            <img src="image3.jpg" alt="game">
+            <h2>Brawl Stars</h2>
+            <p>Participez aux batailles multijoueurs les plus chaotiques dans Brawl Stars, un MOBA amusant avec de nombreux modes de jeu qui a gagné une légion de fans.
+
+            </p>
+            <p>Rating: <span class="rating">4.4 ★</span></p>
+            <p>Downloads: <span class="downloads">500K</span></p>
+            <button onclick="window.location.href='https://bigappboi.com/fl/26pgr
+'">Download</button>
+        </div>
+
+        <div class="game-card" data-name="Game 4">
+            <img src="image4.jpg" alt="game">
+            <h2>Minecraft</h2>
+            <p>Minecraft est le monde ouvert par excellence. Explorez, survivez, construisez avec des blocs, fabriquez et vivez des aventures dans ce jeu de bac à sable
+
+            </p>
+            <p>Rating: <span class="rating">4.6 ★</span></p>
+            <p>Downloads: <span class="downloads">700K</span></p>
+            <button onclick="window.location.href='https://bigappboi.com/fl/3qg8v
+'">Download</button>
+        </div>
+
+        <div class="game-card" data-name="Game 5">
+            <img src="image5.webp" alt="game">
+            <h2>Stardew Valley</h2>
+            <p>The most popular role-playing game about farmers
+            </p>
+            <p>Rating: <span class="rating">4.2 ★</span></p>
+            <p>Downloads: <span class="downloads">1M</span></p>
+            <button onclick="window.location.href='https://appinstallcheck.com/fl/dl147
+'">Download</button>
+        </div>
+        
+        <div class="game-card" data-name="Game 6">
+            <img src="image6.jpeg" alt="game">
+            <h2>Stickman Legends</h2>
+            <p>Stickman Legends est un jeu Android des plus complets et surprenant avec lequel tu pourras passer des heures à tuer des ennemis avec tout type d’attaques
+
+            </p>
+            <p>Rating: <span class="rating">4.7 ★</span></p>
+            <p>Downloads: <span class="downloads">800K</span></p>
+            <button onclick="window.location.href='https://locked3.com/fl/zq62o
+'">Download</button>
+        </div>
+
+        <div class="game-card" data-name="Game 7">
+            <img src="image7.jpeg" alt="game">
+            <h2>Kingdom Rush Vengeance TD Game</h2>
+            <p>Description for Game 7</p>
+            <p>Rating: <span class="rating">4.8 ★</span></p>
+            <p>Downloads: <span class="downloads">600K</span></p>
+            <button onclick="window.location.href='https://areyourealhuman.com/fl/zq62o
+ '">Download</button>
+        </div>
+
+        <div class="game-card" data-name="Game 8">
+            <img src="image8.jpeg" alt="game">
+            <h2>Kingdom Rush Frontiers APK</h2>
+            <p>Read reviews and learn more about Kingdom Rush Frontiers TD</p>
+            <p>Rating: <span class="rating">4.1 ★</span></p>
+            <p>Downloads: <span class="downloads">450K</span></p>
+            <button onclick="window.location.href='https://locked3.com/fl/4ejmy
+'">Download</button>
+        </div>
+
+        <div class="game-card" data-name="Game 9">
+            <img src="image9.jpeg" alt="game">
+            <h2>Driving Zone: Germany APK</h2>
+            <p>Driving Zone: Germany Mod APK is a street racing simulator based on German-made vehicles</p>
+            <p>Rating: <span class="rating">4.6 ★</span></p>
+            <p>Downloads: <span class="downloads">900K</span></p>
+            <button onclick="window.location.href='https://contentlocked.net/fl/r6zd7
+
+'">Download</button>
+        </div>
+
+        <div class="game-card" data-name="Game 10">
+            <img src="image10.jpeg" alt="game">
+            <h2>Sonic Runners APK</h2>
+            <p>Sega revient avec son hérisson bleu classique dans le jeu SONIC RUNNERS. Le personnage a été modernisé dans un jeu difficile de type endless runner
+
+            </p>
+            <p>Rating: <span class="rating">4.9 ★</span></p>
+            <p>Downloads: <span class="downloads">1.5M</span></p>
+            <button onclick="window.location.href='https://areyourealhuman.com/fl/k5p75
+
+'">Download</button>
+        </div>
+
+        <div class="game-card" data-name="Game 11">
+            <img src="image11.jpeg" alt="game">
+            <h2>Mini Militia Classic : DA2 MMC</h2>
+            <p>Combat an intense battle at the arena with the Doodle Army. Last one standing wins the game</p>
+            <p>Rating: <span class="rating">4.3 ★</span></p>
+            <p>Downloads: <span class="downloads">1M</span></p>
+            <button onclick="window.location.href='https://verifyuser.org/fl/1jokp
+'">Download</button>
+        </div>
+
+        <div class="game-card" data-name="game">
+            <img src="image12.webp" alt="Game 12">
+            <h2>Stick War: héritage</h2>
+            <p>Stick War: Legacy MOD est la version du jeu de stratégie mettant en vedette des stickmen dans laquelle vous pouvez profiter d'argent infini pour les équiper
+
+            </p>
+            <p>Rating: <span class="rating">4.5 ★</span></p>
+            <p>Downloads: <span class="downloads">800K</span></p>
+            <button onclick="window.location.href='https://areyourealhuman.com/fl/7v3ed
+'">Download</button>
+        </div>
+    </div>
+
+    <script>
+        // Function to filter games based on search input
+        function filterGames() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const games = document.querySelectorAll('.game-card');
+
+            games.forEach(game => {
+                const gameName = game.getAttribute('data-name').toLowerCase();
+                if (gameName.includes(input)) {
+                    game.style.display = 'block'; // Show matching games
+                } else {
+                    game.style.display = 'none'; // Hide non-matching games
+                }
+            });
+        }
+
+        // Initially show all games
+        document.querySelectorAll('.game-card').forEach(game => {
+            game.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
